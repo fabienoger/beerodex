@@ -1,5 +1,17 @@
 source 'https://rubygems.org'
 
+# Debug
+gem 'colorize'
+
+# Design
+gem 'materialize-sass'
+
+# Protection
+gem 'figaro'
+
+# Devise
+gem 'devise'
+gem 'devise-i18n-views'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
