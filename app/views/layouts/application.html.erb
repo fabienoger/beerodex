@@ -51,8 +51,26 @@
       </nav>
     </header>
     <main class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+        <div class="card-panel">
+          <span class="notice light-blue-text accent-3"><%= notice %></span>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="card-panel red darken-3">
+          <span class="white-text"><%= alert %></span>
+        </div>
+      <% end %>
+      <% if flash[:error] %>
+        <div class="card-panel red darken-3">
+          <span class="white-text"><%= flash[:error] %></span>
+        </div>
+      <% end %>
+      <% if flash[:success] %>
+        <div class="card-panel teal">
+          <span class="white-text"><%= flash[:success] %></span>
+        </div>
+      <% end %>
       <%= yield %>
     </main>
     <footer>

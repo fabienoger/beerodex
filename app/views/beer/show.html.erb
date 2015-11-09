@@ -1,2 +1,8 @@
-<h1>Beer#show</h1>
-<p>Find me in app/views/beer/show.html.erb</p>
+<div class="row show-beer center-align">
+  <h2><%= @beer.name %></h2>
+  <h3><%= @beer.country %></h3>
+  <p>Degrès : <span class="chip"><%= @beer.degrees %> %</span></p>
+  <p>Rapport qualité cuite : <span class="chip"><%= @beer.quality_hangover %></span></p>
+  <h5>Fiche technique</h5>
+  <p><%= @beer.technical_sheet %></p>
+</div>

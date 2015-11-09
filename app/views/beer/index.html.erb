@@ -1,7 +1,25 @@
+<div class="row index-beer">
 <% @beers.each do |beer| %>
-  <h3><%= beer.name %></h3>
-  <span class="chip"><%= beer.degrees %></span>
-  <p>Fiche technique : <%= beer.technical_sheet %></p>
-  <p>Quality Hangover : <%= beer.quality_hangover %></p>
-  <p><%= beer.country %></p>
+  <div class="col s12 m6">
+    <div class="card hoverable">
+      <div class="title-card">
+        <h3><%= beer.name %></h3>
+        <span class="chip"><%= beer.degrees %> %</span>
+      </div>
+      <div class="card-content">
+        <p>Fiche technique : <%= beer.technical_sheet %></p>
+        <p>Quality Hangover : <%= beer.quality_hangover %></p>
+        <p>Origine : <%= beer.country %></p>
+      </div>
+      <div class="card-action">
+        <a href="/admin/beers/<%= beer.id %>" class="btn-floating btn-large waves-effect rightwaves-light amber darken-2"><i class="material-icons left">visibility</i></a>
+        <a href="/admin/beers/<%= beer.id %>/edit" class="btn-floating btn-large waves-effect rightwaves-light green accent-4"><i class="material-icons left">mode_edit</i></a>
+        <%= link_to "/admin/beers/#{beer.id}", method: :delete, data: { confirm: 'Are you sure ?' }, class: "btn-floating btn-large waves-effect rightwaves-light red darken-1" do %>
+          <i class="material-icons">delete</i>
+        <% end %>
+        <a href="#"></a>
+      </div>
+    </div>
+  </div>
 <% end %>
+</div>

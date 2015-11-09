@@ -1,14 +1,41 @@
 <div class="row new-beer">
   <h2>Ajouter une bière</h2>
 
-  <%= form_for @beer do %>
-    <div class="input-field">
-      <i class="material-icons prefix">label</i>
-      <input type="text" class="validate" id="name" name="beer[name]" value="" />
-      <label for="name">Nom de la bière</label>
+  <%= form_tag "/admin/beers/create", method: "post" do %>
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">label</i>
+        <input type="text" class="validate" id="name" name="beer[name]" value="" />
+        <label for="name">Nom de la bière</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">room</i>
+        <input type="text" class="validate" id="country" name="beer[country]" value="" />
+        <label for="country">Origine de la bière</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="prefix"><img src="/assets/percent.png" width="28" height="28" /></i>
+        <input type="number" class="validate" id="degrees" name="beer[degrees]" value="" />
+        <label for="degrees">Degrès de la bière</label>
+      </div>
+      <div class="col s6">
+        <h5>Rapport qualité cuite</h5>
+        <p class="range-field">
+          <input type="range" name="beer[quality_hangover]" id="quality_hangover" min="0" max="5" />
+        </p>
+      </div>
     </div>
     <div class="input-field">
-      
+      <i class="material-icons prefix">description</i>
+      <textarea id="technical_sheet" name="beer[technical_sheet]" class="materialize-textarea"></textarea>
+      <label for="technical_sheet">Fiche technique</label>
+    </div>
+    <div class="submit-button">
+      <button class="btn-floating btn-large waves-effect waves-light">
+        <i class="material-icons">add</i>
+      </button>
     </div>
   <% end %>
 </div>

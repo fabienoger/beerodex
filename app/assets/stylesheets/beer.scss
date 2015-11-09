@@ -1,3 +1,78 @@
-// Place all the styles related to the beer controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "config";
+
+div.row.index-beer {
+  div.card.hoverable {
+    div.title-card {
+      background-color: $p-color;
+      padding: 15px;
+      h3 {
+        color: #FFF;
+        margin: 0;
+      }
+      span.chip {
+        position: absolute;
+        color: $p-color;
+        right: 15px;
+      }
+    }
+    background-color: #FFF;
+  }
+}
+
+div.row.new-beer, div.row.edit-beer {
+  div.submit-button {
+    width: 100%;
+
+    button.btn-floating {
+      margin: 0 auto;
+      display: block;
+      background-color: $p-color;
+    }
+  }
+
+  /* label color */
+  .input-field label {
+   color: $p-color;
+  }
+  /* label focus color */
+  .input-field textarea:focus + label {
+   color: $p-color;
+  }
+  /* label underline focus color */
+  .input-field textarea:focus {
+   border-bottom: 1px solid $p-color;
+   box-shadow: 0 1px 0 0 $p-color;
+  }
+  /* number label focus color */
+  .input-field input[type=number]:focus + label {
+   color: $p-color;
+  }
+  /* number label underline focus color */
+  .input-field input[type=number]:focus {
+   border-bottom: 1px solid $p-color;
+   box-shadow: 0 1px 0 0 $p-color;
+  }
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+   color: $p-color;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+   border-bottom: 1px solid $p-color;
+   box-shadow: 0 1px 0 0 $p-color;
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+   border-bottom: 1px solid $p-color;
+   box-shadow: 0 1px 0 0 $p-color;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+   border-bottom: 1px solid $p-color;
+   box-shadow: 0 1px 0 0 $p-color;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active {
+   color: $p-color;
+  }
+}
