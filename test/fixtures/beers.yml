@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  degrees: 1
+  technical_sheet: MyText
+  quality_hangover: 1
+  country: MyString
+
+two:
+  name: MyString
+  degrees: 1
+  technical_sheet: MyText
+  quality_hangover: 1
+  country: MyString

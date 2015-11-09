@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  # Beers routes
+  get 'admin/beers' => "beer#index"
+  get 'admin/beers/new' => "beer#new"
+  post 'admin/beers/create' => "beer#create"
+  get 'admin/beers/:id' => "beer#show"
+  get 'admin/beers/:id/edit' => "beer#edit"
+  patch 'admin/beers/:id' => "beer#update"
+  delete 'admin/beers/:id' => "beer#destroy"
+
   devise_for :users
   get 'home/index'
 

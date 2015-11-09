@@ -1,0 +1,7 @@
+<% @beers.each do |beer| %>
+  <h3><%= beer.name %></h3>
+  <span class="chip"><%= beer.degrees %></span>
+  <p>Fiche technique : <%= beer.technical_sheet %></p>
+  <p>Quality Hangover : <%= beer.quality_hangover %></p>
+  <p><%= beer.country %></p>
+<% end %>

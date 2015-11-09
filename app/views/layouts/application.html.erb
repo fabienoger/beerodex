@@ -8,6 +8,14 @@
   </head>
   <body>
     <header>
+      <ul id="beer-menu" class="dropdown-content">
+        <li><a href="/admin/beers">Liste bières</a></li>
+        <li><a href="/admin/beers/new">Ajouter une bière</a></li>
+      </ul>
+      <ul id="mobile-beer-menu" class="dropdown-content">
+        <li><a href="/admin/beers">Liste bières</a></li>
+        <li><a href="/admin/beers/new">Ajouter une bière</a></li>
+      </ul>
       <nav>
         <div class="nav-wrapper container">
           <a href="#" class="brand-logo right">Beer O' Dex</a>
@@ -15,6 +23,9 @@
           <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="/">Home</a></li>
             <% if user_signed_in? %>
+              <% if current_user.admin? %>
+                <li><a class="dropdown-button" href="#!" data-activates="beer-menu">Bières<i class="material-icons right">arrow_drop_down</i></a></li>
+              <% end %>
               <li><%= link_to "Edit", edit_user_registration_path %></li>
               <li><a rel="nofollow" data-method="delete" href="/users/sign_out">Log out</a></li>
             <% else %>
@@ -27,6 +38,9 @@
         <ul class="side-nav" id="mobile-menu">
           <li><a href="/">Home</a></li>
           <% if user_signed_in? %>
+            <% if current_user.admin? %>
+              <li><a class="dropdown-button" href="#!" data-activates="mobile-beer-menu">Bières<i class="material-icons right">arrow_drop_down</i></a></li>
+            <% end %>
             <li><%= link_to "Edit", edit_user_registration_path %></li>
             <li><a rel="nofollow" data-method="delete" href="/users/sign_out">Log out</a></li>
           <% else %>

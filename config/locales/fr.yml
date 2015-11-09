@@ -9,3 +9,7 @@ fr:
     label:
       user:
         username: Pseudo
+        first_name: Prénom
+        last_name: Nom
+        update: Enregistrer
+        cancel_account: Supprimer mon compte
