@@ -1,0 +1,21 @@
+<div class="row beerodex-new">
+  <h2>Ajouter une bière au Beer O' Dex</h2>
+
+  <%= form_tag "/beerodex/create", method: "post" do %>
+    <div class="input-field">
+      <i class="material-icons prefix">label</i>
+      <input type="text" class="validate" id="name" name="beerodex[name]" />
+      <label for="name">Nom de la bière</label>
+    </div>
+    <div class="input-field">
+      <i class="prefix"><img src="/assets/percent.png" width="28" height="28" /></i>
+      <input type="number" class="validate" id="degrees" name="beerodex[degrees]" />
+      <label for="degrees">Degrès de la bière</label>
+    </div>
+    <div class="submit-button">
+      <button class="btn-floating btn-large waves-effect waves-light">
+        <i class="material-icons">add</i>
+      </button>
+    </div>
+  <% end %>
+</div>

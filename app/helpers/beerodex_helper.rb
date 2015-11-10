@@ -1,0 +1,2 @@
+module BeerodexHelper
+end

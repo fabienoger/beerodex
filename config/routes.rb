@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  # Beer O' Dex routes
+  get '/beerodex/new' => "beerodex#new"
+  get '/beerodex' => "beerodex#index"
+  get '/beerodex/show' => "beerodex#show"
+  post '/beerodex/create' => "beerodex#create"
+
   # Beers routes
   get '/admin/beers' => "beer#index"
   get '/admin/beers/new' => "beer#new"
@@ -8,6 +14,7 @@ Rails.application.routes.draw do
   get '/admin/beers/:id/edit' => "beer#edit"
   patch '/admin/beers/:id' => "beer#update"
   delete '/admin/beers/:id' => "beer#destroy"
+
 
   devise_for :users
   get 'home/index'
