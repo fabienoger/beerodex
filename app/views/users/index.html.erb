@@ -1,0 +1,14 @@
+<div class="row users-index">
+  <% @users.each do |user| %>
+    <div class="card teal hoverable">
+      <div class="card-content">
+        <span class="card-title"><%= user.username %></span>
+        <%= image_tag user.avatar.url(:thumb) %>
+        <%= user.email %>
+      </div>
+      <div class="card-action">
+
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<div class="row">
+  <%= form_for @user, url: '/users/avatar/create', html: { multipart: true } do |form| %>
+    <%= form.file_field :avatar %>
+    <button type="submit" class="btn amber">
+      <i class="material-icons">perm_identity</i>
+    </button>
+  <% end %>
+</div>

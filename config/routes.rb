@@ -15,8 +15,16 @@ Rails.application.routes.draw do
   patch '/admin/beers/:id' => "beer#update"
   delete '/admin/beers/:id' => "beer#destroy"
 
+  # Admin Users routes
+  get '/admin/users' => "users#index"
+  get '/admin/users/:id' => "users#show"
+  get '/admin/users/:id/edit' => "users#edit"
+  patch '/admin/users/:id' => "users#update"
+  delete '/admin/users/destroy' => "users#destroy"
 
   devise_for :users
+  get '/users/avatar' => "home#avatar"
+  patch '/users/avatar/create' => "home#create_avatar"
   get 'home/index'
 
   root to: "home#index"
