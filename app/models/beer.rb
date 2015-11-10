@@ -14,4 +14,6 @@ class Beer < ActiveRecord::Base
   validates :technical_sheet, presence: {
     message: "La fiche technique doit être renseigné."
   }
+
+  has_many :beerodecs
 end
