@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @unregistered_beer = UnregisteredBeer.all
   end
 
   def avatar

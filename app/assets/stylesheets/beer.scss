@@ -1,5 +1,15 @@
 @import "config";
 
+div.row.unregistered-beer {
+  div.beer {
+    div.card-action {
+      form {
+        display: inline-block;
+      }
+    }
+  }
+}
+
 div.row.index-beer {
   div.card.hoverable {
     div.title-card {

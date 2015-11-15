@@ -9,9 +9,28 @@
       </div>
     </a>
   </div>
-  <div class="col s12 m6">
-    <div class="card hoverable">
-      
-    </div>
-  </div>
+  <% if current_user %>
+    <% if current_user.admin == true %>
+      <div class="col s12 m6">
+        <a href="/admin/unregistered-beer" class="card hoverable">
+          <h3>Bières non trouvées des utilisateurs</h3>
+          <ul class="">
+            <% @unregistered_beer.each do |beer| %>
+              <li><%= beer.name %><span class="chip"><%= beer.degrees %></span></li>
+            <% end %>
+          </ul>
+        </a>
+      </div>
+      <div class="col s12 m6">
+        <a href="/admin/beers/new" class="card hoverable">
+          <h3>Ajouter une bière à la base de données</h3>
+          <div class="center-button">
+            <button class="btn-floating btn-large waves-effect waves-light amber darken-2">
+              <i class="material-icons">add</i>
+            </button>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  <% end %>
 </div>

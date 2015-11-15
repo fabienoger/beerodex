@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get '/admin/beers/:id/edit' => "beer#edit"
   patch '/admin/beers/:id' => "beer#update"
   delete '/admin/beers/:id' => "beer#destroy"
+  get '/admin/unregistered-beer/' => "beer#unregistered_beer"
+  get '/admin/unregistered-beer/:id' => "beer#add_unregistered_beer"
+  post '/admin/create-unregistered-beer/:id' => "beer#create_unregistered_beer"
+  delete '/admin/destroy-unregistered-beer/:id' => "beer#destroy_unregistered_beer"
 
   # Admin Users routes
   get '/admin/users' => "users#index"

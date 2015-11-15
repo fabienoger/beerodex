@@ -1,0 +1,22 @@
+<div class="row unregistered-beer">
+  <h3>Bières non trouvées des utilisateurs</h3>
+    <% @unregistered_beer.each do |beer| %>
+      <div class="col s12 m6 beer">
+        <div class="card hoverable">
+          <div class="card-content">
+            <h5 class="black-text card-title"><%= beer.name %></h5>
+            <span class="chip"><%= beer.degrees %></span>
+            <span><%= User.find(beer.user_id).username %></span>
+          </div>
+          <div class="card-action">
+            <%= form_tag "/admin/destroy-unregistered-beer/#{beer.id}", method: "delete" do %>
+              <button type="submit" class="btn red">
+                <i class="material-icons">delete</i>
+              </button>
+            <% end %>
+            <a class="white-text btn" href="/admin/unregistered-beer/<%= beer.id %>"><i class="material-icons">add</i></a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
